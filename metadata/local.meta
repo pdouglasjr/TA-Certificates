@@ -1,0 +1,15 @@
+[app/install/state]
+version = 8.2.4
+modtime = 1643050230.007592000
+
+[app/ui]
+version = 8.2.4
+modtime = 1644957151.401952000
+
+[app/launcher]
+version = 8.2.4
+modtime = 1644957151.404085000
+
+[app/package/check_for_updates]
+version = 8.2.4
+modtime = 1644957151.404669000
