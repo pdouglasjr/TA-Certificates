@@ -1,5 +1,0 @@
-"ssl_issuer_common_name","ssl_subject_common_name","ssl_hash"
-"ca.splunklab.io","ca.splunklab.io",8607985f
-"ca.splunklab.io","rcvr.splunklab.io",d763d20d
-"ca.splunklab.io","fwdr.splunklab.io",5ba4a120
-"ca.splunklab.io","idxr01.splunklab.io",0c8b669c
