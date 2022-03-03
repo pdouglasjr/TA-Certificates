@@ -13,3 +13,17 @@ modtime = 1644957151.404085000
 [app/package/check_for_updates]
 version = 8.2.4
 modtime = 1644957151.404669000
+
+[savedsearches/Lookup%20Generator%20-%20Splunk%20SSL%20Certificates]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = none
+version = 8.2.4
+modtime = 1646284882.835724000
+
+[savedsearches/Lookup%20Generator%20-%20Non-Splunk%20SSL%20Certificates]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = none
+version = 8.2.4
+modtime = 1646284915.365503000
