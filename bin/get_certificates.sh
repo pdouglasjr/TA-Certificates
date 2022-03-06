@@ -29,6 +29,9 @@ find ${SPLUNK_HOME}/etc/auth/ -maxdepth 10 -mindepth 1 -type d | while read dir;
             # Calculate the certificate's hash
             HASH=$($SPLUNK_HOME/bin/splunk cmd openssl x509 -in $item -hash -noout)
 
+	    # Grab public key algorithm
+	    PUBLIC_KEY_ALGORITHM=$($SPLUNK_HOME/bin/splunk cmd openssl x509 -in $item -text -noout | grep -o -m1 'Public Key Algorithm.*' | cut -d':' -f2- | awk '{$1=$1};1')
+	    
             # Grab signature algorithm
             SIGNATURE_ALGORITHM=$($SPLUNK_HOME/bin/splunk cmd openssl x509 -in $item -text -noout | grep -o -m1 'Signature Algorithm.*' | cut -d':' -f2- | awk '{$1=$1};1')
 
@@ -113,6 +116,7 @@ find ${SPLUNK_HOME}/etc/auth/ -maxdepth 10 -mindepth 1 -type d | while read dir;
                      filepath=${FILEPATH}, \
                      serial=${SERIAL}, \
                      hash=${HASH}, \
+		     public_key_algorithm=${PUBLIC_KEY_ALGORITHM}, \
                      signature_algorithm=${SIGNATURE_ALGORITHM}, \
                      start_date=${START_DATE}, \
                      end_date=${END_DATE}, \

@@ -17,13 +17,34 @@ modtime = 1644957151.404669000
 [savedsearches/Lookup%20Generator%20-%20Splunk%20SSL%20Certificates]
 access = read : [ * ], write : [ admin ]
 export = none
-owner = none
+owner = nobody
 version = 8.2.4
-modtime = 1646284882.835724000
+modtime = 1646372730.524714000
 
 [savedsearches/Lookup%20Generator%20-%20Non-Splunk%20SSL%20Certificates]
 access = read : [ * ], write : [ admin ]
 export = none
-owner = none
+owner = nobody
 version = 8.2.4
-modtime = 1646284915.365503000
+modtime = 1646372754.925769000
+
+[savedsearches/Lookup%20Generator%20-%20All%20SSL%20Certificates]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = nobody
+version = 8.2.4
+modtime = 1646372759.545868000
+
+[savedsearches/Security%20-%20Non-Splunk%20SSL%20Certificates%20Set%20to%20Expire%20Within%201%20Month]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = nobody
+version = 8.2.4
+modtime = 1646371983.669105000
+
+[savedsearches/Security%20-%20Expired%20Non-Splunk%20SSL%20Certificates]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = nobody
+version = 8.2.4
+modtime = 1646372813.183564000

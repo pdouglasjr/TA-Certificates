@@ -19,7 +19,10 @@ function main() {
         # Hash
         Set-Variable -Name HASH -Value (& "$env:SPLUNK_EXE" cmd openssl x509 -in $CERT_FILE -hash -noout)
 
-        # Signature Algorithms
+	# Public Key Algorithms
+        Set-Variable -Name PUBLIC_KEY_ALGORITHM -Value ((& "$env:SPLUNK_EXE" cmd openssl x509 -in $CERT_FILE -text -noout | Select-String -Pattern '\bPublic Key Algorithm:.*[^\n]+\b' | Select-Object -First 1) -replace '\s+', '' -split ':' | Select-Object -First 2)[1]
+        
+	# Signature Algorithms
         Set-Variable -Name SIGNATURE_ALGORITHM -Value ((& "$env:SPLUNK_EXE" cmd openssl x509 -in $CERT_FILE -text -noout | Select-String -Pattern '\bSignature Algorithm:.*[^\n]+\b' | Select-Object -First 1) -replace '\s+', '' -split ':' | Select-Object -First 2)[1]
 
         # Version
@@ -105,6 +108,7 @@ function main() {
                                           ", filepath="+$FILEPATH+
                                           ", serial="+$SERIAL+
                                           ", hash="+$HASH+
+					  ", public_key_algorithm="+$PUBLIC_KEY_ALGORITHM+
                                           ", signature_algorithm="+$SIGNATURE_ALGORITHM+
                                           ", start_date="+$START_DATE+
                                           ", end_date="+$END_Date+
